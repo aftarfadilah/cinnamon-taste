@@ -1,29 +1,10 @@
-# cinnamon-taste
+# Cinnamon Taste
 
-## Project setup
-```
-npm install
-```
+A vue based website
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## Thanks to
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+- [Vue Carousel](https://github.com/SSENSE/vue-carousel)
+- [Vue Typer](https://github.com/cngu/vue-type)
+- [Vue Tasty Burger](https://github.com/imfaber/vue-tasty-burgers)
+- [Vue MQ](https://github.com/AlexandreBonaventure/vue-mq)
