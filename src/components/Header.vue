@@ -1,59 +1,119 @@
 <template>
-  <div class="hero">
-    <div class="header">
+  <div id="header">
+    <transition name="fade">
+      <div v-show="isActive" class="menu">
+        <transition-group name="list" tag="nav">
+          <router-link key="home" to="/Home" class="menu-item">
+            Home
+          </router-link>
+          <router-link key="portfolio" to="/Portfolio" class="menu-item">
+            Portfolio
+          </router-link>
+          <router-link key="technology" to="/Technology" class="menu-item">
+            Technology
+          </router-link>
+        </transition-group>
+      </div>
+    </transition>
+    <div class="nav-header">
       <router-link to="home">
         <div class="brand">
-          <img src="../assets/brand.png">
+          <img src="../assets/brand-alt.png">
           <div class="tagline">
             Your<br>Little<br>Spaceship
           </div>
         </div>
       </router-link>
-      <nav class="nav-hero">
+      <div class="burger">
         <tasty-burger-button
+          :active="isActive"
+          @toggle="setIsActive"
           type="spin"
-          color="#fff"
-          activeColor="#fff"/>
-      </nav>
+          color="#2c3e50"
+          activeColor="#2c3e50"/>
+      </div>
     </div>
-    <carousel autoplay="true" :per-page="1" :paginationEnabled="false">
-      <slide class="bg-cover slide-item" style="background-image: url(https://images.unsplash.com/photo-1484417894907-623942c8ee29?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1366&q=80);"></slide>
-      <slide class="bg-cover slide-item" style="background-image: url(https://images.unsplash.com/photo-1534972195531-d756b9bfa9f2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1366&q=80);"></slide>
-      <slide class="bg-cover slide-item" style="background-image: url(https://images.unsplash.com/photo-1556390234-0ff1fed64233?ixlib=rb-1.2.1&auto=format&fit=crop&w=1366&q=80);"></slide>
-    </carousel>
-    <div class="overlay"></div>
-    <div class="headline">
-      <h1>
-        I Build <span>
-          <vue-typer
-          :text='["Website", "Android App", "Trust"]'
-          initial-action='typing'
-          pre-type-delay='500'
-          erase-delay='50'
-          erase-style='backspace'
-          ></vue-typer>
-        </span>
-      </h1>
+    <b-container class="hero">
+      <b-row class="align-items-center">
+        <b-col class="headline">
+          <h1>
+            Trust me, I'm a<br>
+            <span>
+              <vue-typer
+              :text='["Programmer", "Web Developer", "UI/UX Expert"]'
+              initial-action='typing'
+              :pre-type-delay=500
+              :erase-delay=50
+              erase-style='backspace'
+              ></vue-typer>
+            </span>
+          </h1>
+        </b-col>
+        <img src="../assets/dev-activity.svg" alt="Developer Activity" class="illustration-1">
+      </b-row>
+    </b-container>
+    <div class="arrow-scroll">
+      <div class="body"></div>
+      <div class="point point--down"></div>
     </div>
   </div>
 </template>
 
 <style>
+  #header {
+    min-height: 100vh;
+  }
+
   .bg-cover {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
   }
 
-  .slide-item {
-    height:100vh;
+  .menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    z-index: 9;
+    opacity: 1;
+  }
+  .menu nav {
+    display: flex;
+    flex-direction: column;
+  }
+  .menu nav a {
+    color: #2c3e50;
+    font-family: 'Comfortaa', Helvetica, Arial, sans-serif;
+    font-size: 24pt;
+    text-decoration: none;
+    padding: 6px;
   }
 
   .hero {
     position: relative;
   }
 
-  .hero .header {
+  .hero .row {
+    height: 100vh;
+  }
+
+  .hero .illustration-1 {
+    position: absolute;
+    right: 15px;
+    width: 60%;
+    z-index: -1;
+  }
+
+  .hero .headline {
+    text-align: left;
+  }
+
+  .nav-header {
     position: absolute;
     width: 100%;
     padding: 30px 10%;
@@ -62,37 +122,41 @@
     z-index: 10;
   }
 
-  .hero .header a {
+  .nav-header a {
     text-decoration: none;
   }
 
-  .hero .header .brand {
+  .nav-header .brand {
     display: flex;
     align-items: center;
     opacity: .75;
     transition: .2s;
   }
 
-  .hero .header .tagline {
-    color: white;
+  .nav-header .tagline {
+    color: #2c3e50;
+    line-height: 1.2;
     padding: 5px 10px;
     text-align: left;
     font-family: 'Comfortaa', Helvetica, Arial, sans-serif;
   }
 
-  .hero .header .brand:hover {
+  .nav-header .brand:hover {
     opacity: 1;
   }
 
-  .hero .header .brand img {
+  .nav-header .brand img {
     height: 60px;
     width: auto;
+  }
+
+  .nav-header .burger {
+    display: flex;
   }
 
   .nav-hero {
     display: inline-flex;
     align-items: center;
-    color: white;
     opacity: .75;
     transition: .2s;
   }
@@ -117,26 +181,66 @@
     pointer-events: none;
   }
 
-  .hero .headline {
-    position: absolute;
-    bottom: 5vh;
-    left: 10%;
-    max-width: 100vw;
-    color: white;
-  }
-
   .vue-typer .custom.char {
-    color: white;
+    color: #2c3e50;
   }
 
   .vue-typer .custom.caret {
-    background-color: white;
+    background-color: #2c3e50;
     margin-left: 2px;
   }
+
+  .fade-enter-active, .fade-leave-active {
+    transition: opacity .5s;
+  }
+
+  .fade-enter, .fade-leave-to {
+    opacity: 0;
+  }
+
+  .arrow-scroll {
+    position: absolute;
+    left: 5%;
+    bottom: 5vh;
+    padding: 5px 20px;
+    cursor: pointer;
+  }
+
+  .arrow-scroll .body {
+    height: 55px;
+    width: 3.5px;
+    background-color: #2c3e50;
+    border-radius: 100px;
+  }
+
+  .arrow-scroll .point {
+    position: absolute;
+    bottom: 5px;
+    height: 3.5px;
+    width: 15px;
+    background-color: #2c3e50;
+    border-radius: 100px;
+    opacity: 0;
+    transition: .5s ease;
+  }
+
+  .arrow-scroll .point--down {
+    opacity: 1;
+    bottom: 10px;
+    transform: rotate(-45deg);
+  }
+
+  .arrow-scroll .point--up {
+    opacity: 1;
+    bottom: initial;
+    top: 10px;
+    transform: rotate(45deg);
+  }
+
 </style>
 
 <script>
-import { Carousel, Slide } from 'vue-carousel';
+// import { Carousel, Slide } from 'vue-carousel';
 import { VueTyper } from 'vue-typer';
 import { TastyBurgerButton } from 'vue-tasty-burgers';
 import 'vue-tasty-burgers/dist/vue-tasty-burgers.css';
@@ -144,26 +248,19 @@ import 'vue-tasty-burgers/dist/vue-tasty-burgers.css';
 export default {
   name: 'Header',
   components: {
-    Carousel,
-    Slide,
     VueTyper,
     TastyBurgerButton,
   },
-  props: {
-    slides: [
-      {
-        id: 1,
-        url: 'url(https://images.unsplash.com/photo-1556390234-0ff1fed64233?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80)',
-      },
-      {
-        id: 2,
-        url: 'url(https://images.unsplash.com/photo-1484417894907-623942c8ee29?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=889&q=80)',
-      },
-      {
-        id: 3,
-        url: 'url(https://images.unsplash.com/photo-1534972195531-d756b9bfa9f2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80)',
-      },
-    ],
+  props: {},
+  data() {
+    return {
+      isActive: false,
+    };
+  },
+  methods: {
+    setIsActive(value) {
+      this.isActive = value;
+    },
   },
 };
 </script>

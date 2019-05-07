@@ -1,21 +1,16 @@
 import Vue from 'vue';
-import VueMq from 'vue-mq';
+import BootstrapVue from 'bootstrap-vue';
 import App from './App.vue';
 import router from './router';
 import store from './store';
 import './registerServiceWorker';
 
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap-vue/dist/bootstrap-vue.css';
+
 Vue.config.productionTip = false;
 
-Vue.use(VueMq, {
-  breakpoints: {
-    phone: 425,
-    tablet: 768,
-    laptop: 1440,
-    whatever: Infinity,
-  },
-  defaultBreakpoint: 'laptop',
-});
+Vue.use(BootstrapVue);
 
 new Vue({
   router,
