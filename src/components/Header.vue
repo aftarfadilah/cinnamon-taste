@@ -1,46 +1,13 @@
 <template>
   <div id="header">
-    <transition name="fade">
-      <div v-show="isActive" class="menu">
-        <transition-group name="list" tag="nav">
-          <router-link key="home" to="/Home" class="menu-item">
-            Home
-          </router-link>
-          <router-link key="portfolio" to="/Portfolio" class="menu-item">
-            Portfolio
-          </router-link>
-          <router-link key="technology" to="/Technology" class="menu-item">
-            Technology
-          </router-link>
-        </transition-group>
-      </div>
-    </transition>
-    <div class="nav-header">
-      <router-link to="home">
-        <div class="brand">
-          <img src="../assets/brand-alt.png">
-          <div class="tagline">
-            Your<br>Little<br>Spaceship
-          </div>
-        </div>
-      </router-link>
-      <div class="burger">
-        <tasty-burger-button
-          :active="isActive"
-          @toggle="setIsActive"
-          type="spin"
-          color="#2c3e50"
-          activeColor="#2c3e50"/>
-      </div>
-    </div>
     <b-container class="hero">
       <b-row class="align-items-center">
-        <b-col class="headline">
+        <b-col cols="12" sm="4" class="headline">
           <h1>
             Trust me, I'm a<br>
             <span>
               <vue-typer
-              :text='["Programmer", "Web Developer", "UI/UX Expert"]'
+              :text='["Programmer", "Web Developer", "Full Stack Dev"]'
               initial-action='typing'
               :pre-type-delay=500
               :erase-delay=50
@@ -49,7 +16,9 @@
             </span>
           </h1>
         </b-col>
-        <img src="../assets/dev-activity.svg" alt="Developer Activity" class="illustration-1">
+        <b-col cols="12" sm="8" class="d-none d-sm-block">
+          <img src="../assets/dev-activity.svg" alt="Developer Activity" class="illustration-1">
+        </b-col>
       </b-row>
     </b-container>
     <div class="arrow-scroll">
@@ -82,9 +51,13 @@
     z-index: 9;
     opacity: 1;
   }
+  .menu .overlay {
+    background-color: white;
+  }
   .menu nav {
     display: flex;
     flex-direction: column;
+    z-index: 1;
   }
   .menu nav a {
     color: #2c3e50;
@@ -102,56 +75,26 @@
     height: 100vh;
   }
 
+  @media (max-width: 576px) {
+    .hero {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero .row {
+      height: 50vh;
+    }
+
+  }
+
   .hero .illustration-1 {
-    position: absolute;
-    right: 15px;
-    width: 60%;
+    width: 90%;
     z-index: -1;
   }
 
   .hero .headline {
     text-align: left;
-  }
-
-  .nav-header {
-    position: absolute;
-    width: 100%;
-    padding: 30px 10%;
-    display: flex;
-    justify-content: space-between;
-    z-index: 10;
-  }
-
-  .nav-header a {
-    text-decoration: none;
-  }
-
-  .nav-header .brand {
-    display: flex;
-    align-items: center;
-    opacity: .75;
-    transition: .2s;
-  }
-
-  .nav-header .tagline {
-    color: #2c3e50;
-    line-height: 1.2;
-    padding: 5px 10px;
-    text-align: left;
-    font-family: 'Comfortaa', Helvetica, Arial, sans-serif;
-  }
-
-  .nav-header .brand:hover {
-    opacity: 1;
-  }
-
-  .nav-header .brand img {
-    height: 60px;
-    width: auto;
-  }
-
-  .nav-header .burger {
-    display: flex;
   }
 
   .nav-hero {
@@ -242,25 +185,12 @@
 <script>
 // import { Carousel, Slide } from 'vue-carousel';
 import { VueTyper } from 'vue-typer';
-import { TastyBurgerButton } from 'vue-tasty-burgers';
 import 'vue-tasty-burgers/dist/vue-tasty-burgers.css';
 
 export default {
-  name: 'Header',
+  name: 'header',
   components: {
     VueTyper,
-    TastyBurgerButton,
-  },
-  props: {},
-  data() {
-    return {
-      isActive: false,
-    };
-  },
-  methods: {
-    setIsActive(value) {
-      this.isActive = value;
-    },
   },
 };
 </script>

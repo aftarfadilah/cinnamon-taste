@@ -5,10 +5,10 @@ A vue based website
 ## Checklist
 
 - [x] Above-the-fold
-- [ ] Navigation
+- [x] Navigation
 - [ ] Footer
-- [ ] Single Page
-- [ ] Portfolio Page
+- [ ] Home Page
+- [ ] About Page
 - [ ] Technology Page
 - [ ] 404 Page
 

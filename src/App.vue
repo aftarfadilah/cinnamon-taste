@@ -39,4 +39,36 @@ h1, h2, h3 {
 #nav a.router-link-exact-active {
   color: #42b983;
 }
+
+a:hover {
+  text-decoration: inherit !important;
+}
+
+::-webkit-scrollbar {
+  height: 10px;
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #efefef;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d5d5d5;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #c4c4c4;
+}
+
+::-moz-selection {
+  background-color: #aeaeae;
+}
+
+::selection {
+  background-color: #aeaeae;
+}
+
 </style>
