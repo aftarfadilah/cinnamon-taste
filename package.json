@@ -9,12 +9,17 @@
     "now-build": "npm run build"
   },
   "dependencies": {
+    "animate.css": "^3.7.2",
     "bootstrap": "^4.3.1",
     "bootstrap-vue": "^2.0.0-rc.19",
     "core-js": "^2.6.5",
+    "jquery": "^3.4.1",
+    "p-limit": "^2.2.0",
     "register-service-worker": "^1.6.2",
     "vue": "^2.6.6",
+    "vue-awesome": "^3.5.4",
     "vue-router": "^3.0.1",
+    "vue-scrollto": "^2.15.0",
     "vue-tasty-burgers": "^1.1.4",
     "vue-typer": "^1.2.0",
     "vuex": "^3.0.1"

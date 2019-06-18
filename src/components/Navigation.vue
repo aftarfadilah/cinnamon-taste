@@ -1,9 +1,16 @@
 <template>
-  <div class="navigation">
-    <transition name="fade">
-      <div v-show="isActive" class="menu">
+  <div class="navigation" id="top">
+    <transition
+      name="fade"
+      enter-active-class="animated fadeIn"
+      leave-active-class="animated fadeOut">
+      <div v-show="isActive" class="main-navigation">
         <div class="overlay"></div>
-        <transition-group name="list" tag="nav">
+        <transition-group
+          tag="nav"
+          name="fadeLeft"
+          enter-active-class="animated fadeInLeft"
+          leave-active-class="animated fadeOutLeft">
           <router-link key="home" to="/home" class="menu-item">
             Home
           </router-link>
@@ -38,6 +45,48 @@
 </template>
 
 <style>
+  .h-100vh {
+    min-height: 100vh;
+  }
+
+  .bg-cover {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .navigation {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+  }
+
+  .main-navigation {
+    position: fixed;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    z-index: 9;
+    opacity: 1;
+  }
+  .main-navigation .overlay {
+    background-color: white;
+  }
+  .main-navigation nav {
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+  }
+  .main-navigation nav a {
+    color: #2c3e50;
+    font-family: 'Comfortaa', Helvetica, Arial, sans-serif;
+    font-size: 24pt;
+    text-decoration: none;
+    padding: 6px;
+  }
   .nav-header {
     position: absolute;
     width: 100%;

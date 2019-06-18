@@ -12,7 +12,6 @@ html,
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Montserrat', Helvetica, Arial, sans-serif;
 }
 
 h1, h2, h3 {
@@ -20,7 +19,7 @@ h1, h2, h3 {
 }
 
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: 'Montserrat', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -46,16 +45,16 @@ a:hover {
 
 ::-webkit-scrollbar {
   height: 10px;
-  width: 6px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #efefef;
+  background: #f2f2f2;
   border-radius: 6px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #d5d5d5;
+  background: #E0E0E0;
   border-radius: 6px;
 }
 
