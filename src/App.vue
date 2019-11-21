@@ -12,7 +12,6 @@ html,
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Montserrat', Helvetica, Arial, sans-serif;
 }
 
 h1, h2, h3 {
@@ -20,7 +19,7 @@ h1, h2, h3 {
 }
 
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: 'Montserrat', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -39,4 +38,36 @@ h1, h2, h3 {
 #nav a.router-link-exact-active {
   color: #42b983;
 }
+
+a:hover {
+  text-decoration: inherit !important;
+}
+
+::-webkit-scrollbar {
+  height: 10px;
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f2f2f2;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #E0E0E0;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #c4c4c4;
+}
+
+::-moz-selection {
+  background-color: #aeaeae;
+}
+
+::selection {
+  background-color: #aeaeae;
+}
+
 </style>

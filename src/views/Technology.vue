@@ -1,17 +1,9 @@
 <template>
   <div class="about">
     <Navigation></Navigation>
-    <section class="above">
-      <h1>There's nothing about me, yet.</h1>
-    </section>
+    <h1>This is a Technology page</h1>
   </div>
 </template>
-
-<style>
-  section.above {
-    margin-top: 130px;
-  }
-</style>
 
 <script>
 import Navigation from '@/components/Navigation.vue';
