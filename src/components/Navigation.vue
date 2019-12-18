@@ -37,8 +37,8 @@
           :active="isActive"
           @toggle="setIsActive"
           type="spin"
-          color="#2c3e50"
-          activeColor="#2c3e50"/>
+          :color="isBelowTheFold ? '#2c3e50' : '#fff'"
+          :activeColor="isBelowTheFold ? '#2c3e50' : '#fff'"/>
       </div>
     </div>
   </div>
@@ -127,6 +127,10 @@
   .nav-header .burger {
     display: flex;
   }
+
+  .hamburger--spin .hamburger-inner {
+    transition: background-color .25s;
+  }
 </style>
 
 <script>
@@ -140,12 +144,22 @@ export default {
   data() {
     return {
       isActive: false,
+      isBelowTheFold: false,
     };
   },
   methods: {
     setIsActive(value) {
       this.isActive = value;
     },
+    handleScroll() {
+      this.isBelowTheFold = window.scrollY > 500;
+    },
+  },
+  created() {
+    window.addEventListener('scroll', this.handleScroll);
+  },
+  destroyed() {
+    window.removeEventListener('scroll', this.handleScroll);
   },
 };
 </script>
