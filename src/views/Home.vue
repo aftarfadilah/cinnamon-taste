@@ -12,7 +12,7 @@
             </h2>
             <div class="content">
               You were trying to cross the border, right?
-              Walked right into that Imperial ambush, same as us, and that thief over there
+              Walked right into that Imperial ambush, same as us, and that thief over there.
             </div>
           </b-col>
         </b-row>
