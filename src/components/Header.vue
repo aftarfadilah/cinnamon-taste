@@ -102,14 +102,13 @@
 </style>
 
 <script>
-// import { Carousel, Slide } from 'vue-carousel';
-import { VueTyper } from 'vue-typer';
-import 'vue-tasty-burgers/dist/vue-tasty-burgers.css';
+import { VueTyper } from 'vue-typer'
+import 'vue-tasty-burgers/dist/vue-tasty-burgers.css'
 
 export default {
   name: 'my-header',
   components: {
-    VueTyper,
-  },
-};
+    VueTyper
+  }
+}
 </script>

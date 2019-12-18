@@ -11,7 +11,7 @@
           name="fadeLeft"
           enter-active-class="animated fadeInLeft"
           leave-active-class="animated fadeOutLeft">
-          <router-link key="home" to="/home" class="menu-item">
+          <router-link key="home" to="/" class="menu-item">
             Home
           </router-link>
           <router-link key="about" to="/about" class="menu-item">
@@ -134,32 +134,32 @@
 </style>
 
 <script>
-import { TastyBurgerButton } from 'vue-tasty-burgers';
+import { TastyBurgerButton } from 'vue-tasty-burgers'
 
 export default {
   name: 'navigation',
   components: {
-    TastyBurgerButton,
+    TastyBurgerButton
   },
-  data() {
+  data () {
     return {
       isActive: false,
-      isBelowTheFold: false,
-    };
+      isBelowTheFold: false
+    }
   },
   methods: {
-    setIsActive(value) {
-      this.isActive = value;
+    setIsActive (value) {
+      this.isActive = value
     },
-    handleScroll() {
-      this.isBelowTheFold = window.scrollY > 500;
-    },
+    handleScroll () {
+      this.isBelowTheFold = window.scrollY > 500
+    }
   },
-  created() {
-    window.addEventListener('scroll', this.handleScroll);
+  created () {
+    window.addEventListener('scroll', this.handleScroll)
   },
-  destroyed() {
-    window.removeEventListener('scroll', this.handleScroll);
-  },
-};
+  destroyed () {
+    window.removeEventListener('scroll', this.handleScroll)
+  }
+}
 </script>
