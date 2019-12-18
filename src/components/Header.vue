@@ -1,5 +1,5 @@
 <template>
-  <div class="h-100vh">
+  <div class="vh-100 overflow-hidden">
     <b-container class="hero">
       <b-row class="align-items-center">
         <b-col cols="12" sm="4" class="headline">
@@ -17,6 +17,7 @@
           </h1>
         </b-col>
         <b-col cols="12" sm="8" class="d-none d-sm-block">
+          <img src="../assets/blob-shape.svg" class="blob" alt="Blobb">
           <img src="../assets/dev-activity.svg" alt="Developer Activity" class="illustration-1">
         </b-col>
       </b-row>
@@ -31,6 +32,14 @@
 
   .hero .row {
     height: 100vh;
+  }
+
+  .hero .blob {
+    position: absolute;
+    bottom: -80%;
+    left: -20%;
+    width: 200%;
+    z-index: -1;
   }
 
   @media (max-width: 576px) {
@@ -93,14 +102,13 @@
 </style>
 
 <script>
-// import { Carousel, Slide } from 'vue-carousel';
-import { VueTyper } from 'vue-typer';
-import 'vue-tasty-burgers/dist/vue-tasty-burgers.css';
+import { VueTyper } from 'vue-typer'
+import 'vue-tasty-burgers/dist/vue-tasty-burgers.css'
 
 export default {
   name: 'my-header',
   components: {
-    VueTyper,
-  },
-};
+    VueTyper
+  }
+}
 </script>
