@@ -1,6 +1,12 @@
 <template>
-  <div id="app">
+  <div
+    id="app"
+    :class="[isDarkTheme ? 'dark' : 'light']"
+  >
     <router-view/>
+    <div id="switch" v-on:click="toggleDarkTheme">
+      <DarkSwitch :isDarkTheme="isDarkTheme"></DarkSwitch>
+    </div>
   </div>
 </template>
 
@@ -23,7 +29,6 @@ h1, h2, h3 {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
   overflow-x: hidden;
 }
 
@@ -38,6 +43,18 @@ h1, h2, h3 {
 
 #nav a.router-link-exact-active {
   color: #42b983;
+}
+
+.light {
+  color: #2c3e50;
+  background-color: #efefef;
+  transition: .25s ease-in-out;
+}
+
+.dark {
+  background-color: #202945;
+  color: #efefef;
+  transition: .25s ease-in-out;
 }
 
 a:hover {
@@ -72,3 +89,24 @@ a:hover {
 }
 
 </style>
+
+<script>
+import DarkSwitch from '@/components/DarkSwitch.vue'
+
+export default {
+  name: 'app',
+  components: {
+    DarkSwitch
+  },
+  data () {
+    return {
+      isDarkTheme: false
+    }
+  },
+  methods: {
+    toggleDarkTheme () {
+      this.isDarkTheme = !this.isDarkTheme
+    }
+  }
+}
+</script>

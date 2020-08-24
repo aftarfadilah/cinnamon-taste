@@ -39,6 +39,7 @@ export default {
   name: 'Menu',
   data() {
     return {
+      isDarkMode:: false,
       menu: {
         header: '',
         items: [

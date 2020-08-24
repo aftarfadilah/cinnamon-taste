@@ -108,7 +108,6 @@
   }
 
   .nav-header .tagline {
-    color: #2c3e50;
     line-height: 1.2;
     padding: 5px 10px;
     text-align: left;
@@ -130,6 +129,20 @@
 
   .hamburger--spin .hamburger-inner {
     transition: background-color .25s;
+  }
+
+  /* Dark mode configurations */
+
+  .nav-header .tagline {
+    transition: .2s ease-in-out;
+  }
+
+  .light .nav-header .tagline {
+    color: #2c3e50;
+  }
+
+  .dark .nav-header .tagline {
+    color: #efefef;
   }
 </style>
 

@@ -6,7 +6,7 @@ A vue based website
 
 - [x] Landing Page
 - [x] Navigation
-- [ ] Footer
+- [x] Footer
 - [ ] Technology Page
 - [ ] Projects Page
 - [ ] About Page
