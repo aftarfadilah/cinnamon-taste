@@ -62,7 +62,6 @@
   bottom: 0;
   height: 100%;
   width: 3px;
-  background-color: #2c3e50;
   border-radius: 100px;
 }
 
@@ -71,7 +70,6 @@
   bottom: 0;
   height: 3px;
   width: 15px;
-  background-color: #2c3e50;
   border-radius: 100px;
   opacity: 0;
   transition: 1s ease;
@@ -136,26 +134,52 @@ footer {
     margin-left: -1px;
   }
 }
+
+/* Dark mode configs */
+
+.arrow-scroll .body,
+.arrow-scroll .point,
+.footer-navigation a,
+.footer p {
+  transition: background-color, color .2s ease-in-out;
+}
+.light .arrow-scroll .body,
+.light .arrow-scroll .point {
+  background-color: #2c3e50;
+}
+
+.dark .arrow-scroll .body,
+.dark .arrow-scroll .point {
+  background-color: #efefef;
+}
+
+.light .footer-navigation a {
+  color: #2c3e50;
+}
+
+.dark .footer-navigation a {
+  color: #efefef;
+}
 </style>
 
 <script>
 export default {
   name: 'my-footer',
-  data() {
+  data () {
     return {
-      isScrolled: false,
-    };
+      isScrolled: false
+    }
   },
   methods: {
-    handleScroll() {
-      this.isScrolled = window.scrollY > 0;
-    },
+    handleScroll () {
+      this.isScrolled = window.scrollY > 0
+    }
   },
-  created() {
-    window.addEventListener('scroll', this.handleScroll);
+  created () {
+    window.addEventListener('scroll', this.handleScroll)
   },
-  destroyed() {
-    window.removeEventListener('scroll', this.handleScroll);
-  },
-};
+  destroyed () {
+    window.removeEventListener('scroll', this.handleScroll)
+  }
+}
 </script>

@@ -14,12 +14,12 @@
 </style>
 
 <script>
-import Navigation from '@/components/Navigation.vue';
+import Navigation from '@/components/Navigation.vue'
 
 export default {
   name: 'about',
   components: {
-    Navigation,
-  },
-};
+    Navigation
+  }
+}
 </script>

@@ -16,8 +16,8 @@
             </span>
           </h1>
         </b-col>
+        <img src="../assets/blob-shape.svg" class="blob" alt="Blobb">
         <b-col cols="12" sm="8" class="d-none d-sm-block">
-          <img src="../assets/blob-shape.svg" class="blob" alt="Blobb">
           <img src="../assets/dev-activity.svg" alt="Developer Activity" class="illustration-1">
         </b-col>
       </b-row>
@@ -36,10 +36,11 @@
 
   .hero .blob {
     position: absolute;
-    bottom: -80%;
-    left: -20%;
-    width: 200%;
-    z-index: -1;
+    top: -70%;
+    right: -65%;
+    width: 150%;
+    z-index: 0;
+    pointer-events: none;
   }
 
   @media (max-width: 576px) {
@@ -62,6 +63,7 @@
 
   .hero .headline {
     text-align: left;
+    z-index: 1;
   }
 
   .nav-hero {
@@ -98,6 +100,15 @@
   .vue-typer .custom.caret {
     background-color: #2c3e50;
     margin-left: 2px;
+  }
+
+  /* Dark mode configuration */
+  .hero .blob {
+    transition: .2s ease-in-out;
+  }
+
+  .dark .hero .blob {
+    filter: saturate(.5);
   }
 </style>
 
